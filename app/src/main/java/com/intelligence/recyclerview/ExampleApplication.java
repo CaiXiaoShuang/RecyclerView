@@ -4,9 +4,7 @@ import android.app.Application;
 
 import com.squareup.leakcanary.LeakCanary;
 
-/**
- * Created by jianghejie on 16/12/1.
- */
+
 
 public class ExampleApplication extends Application {
     @Override

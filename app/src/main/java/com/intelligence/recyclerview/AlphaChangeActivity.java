@@ -12,9 +12,6 @@ import com.intelligence.caixiaoshuangrecyclerview.XRecyclerView;
 
 import java.util.ArrayList;
 
-/**
- * Created by LinGuanHong on 2017/3/30.
- */
 
 public class AlphaChangeActivity extends AppCompatActivity {
 

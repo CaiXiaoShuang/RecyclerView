@@ -4,13 +4,18 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.intelligence.caixiaoshuangrecyclerview.ProgressStyle;
+import com.intelligence.caixiaoshuangrecyclerview.RecyclerItemClickListener;
 import com.intelligence.caixiaoshuangrecyclerview.XRecyclerView;
+import com.squareup.haha.trove.TObjectFunction;
 
 import java.util.ArrayList;
 
@@ -20,6 +25,7 @@ public class LinearActivity extends AppCompatActivity {
     private ArrayList<String> listData;
     private int refreshTime = 0;
     private int times = 0;
+    long startTime = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +42,21 @@ public class LinearActivity extends AppCompatActivity {
 
         View header = LayoutInflater.from(this).inflate(R.layout.recyclerview_header, (ViewGroup)findViewById(android.R.id.content),false);
         mRecyclerView.addHeaderView(header);
+
+        mRecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(this,
+                new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        Toast.makeText(LinearActivity.this,"onItemClick : postion " + position,Toast.LENGTH_LONG).show();
+
+                    }
+
+                    @Override
+                    public void onLongClick(View view, int posotion) {
+                        Toast.makeText(LinearActivity.this,"onLongClick position :  " + posotion,Toast.LENGTH_LONG).show();
+                    }
+                }));
+
 
         mRecyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
