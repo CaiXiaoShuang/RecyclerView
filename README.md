@@ -12,5 +12,5 @@ Copy
 Step 2. Add the dependency
 
 	dependencies {
-	        compile 'com.github.CaiXiaoShuang:RecyclerView:1.0.1'
+	        compile 'com.github.CaiXiaoShuang:RecyclerView:1.0.2'
 	}
